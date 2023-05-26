@@ -1,0 +1,118 @@
+VIMTUTOR REDUX[ES] V.1.0
+
+Vim es un poderoso editor de texto con demasiados comandos
+Cada uno de estos comandos puede potenciar su trabajo al trabajar con texto
+Esta es una introduccion basica para aprender a usar el editor
+
+Nota : en vim siempre hay multitud de formas de ejecutar una misma accion
+       la forma 'correcta' es la forma que le brinde mas comodidad
+Nota : copia este archivo y prueba cada instruccion que desees
+
+1 CURSOR
+
+Tradicionalmente en vi[predecesor de vim], no existian las teclas direccionales
+  para desplazar el cursor se usaban las teclas <h,j,k,l>
+
+    <izquierda,abajo,arriba,derecha>
+    respectivamente
+
+  actualmente tambien tambien puede usar las teclas direccionales
+
+toda accion en vim precedida por un numero
+  indica cuantas veces va a repetirse dicha accion
+  por lo que si digita 3k, se movera tres lineas hacia arriba
+
+Para moverse el cursor entre palabras puede usar
+  w : inicio de la siguiente palabra  ( W ord )
+  e : final de la palabra             ( E nd  )
+  b : inicio de la palabra anterior   ( B ack )
+
+Para mover el cursor entre lineas
+  0 : inicio de la linea
+  $ : final de la linea
+  ^ : inicio del texto en la linea
+
+Para mover el cursor entre parrafos
+
+  { : inicio del parrafo
+  } : final del parrafo
+
+Para moverse a travez de todo el documento
+  gg : al inicio del texto
+  g1 : a la linea 1
+       reemplaze 1 por el numero de linea de desee
+       para ver las lineas del documento puede usar
+         ':set number'
+         ':set relativenumber'
+         ':set norelativenumber'
+  G  : al final del texto
+
+
+2 SALIR DE VIM
+
+Puede salir usando el <command mode>
+  ingrese en el <command mode> presionando ':'
+  digite
+    q  : para salir    ( Q uit  )
+    w  : para guardar  ( W rite )
+    q! : para salir sin guardar
+    wq : para guardar y salir
+  acontinuacion presione la tecla <Enter> para continuar
+
+  alternativamente puede usar
+    ZQ : para salir sin guardar
+    ZZ : para salir y guardar
+
+
+3 MODOS DE VIM
+
+La razon por la cual puede desplazarse con <h,j,k,l> sin editar el texto
+  es porque actalmente se encuentra en <normal mode>
+  este modo permite usar toda pulsacion como una instruccion para vim
+  para insertar texto nescesita ingresar a <inset mode>
+
+3.1 INSERTAR TEXTO
+
+Para insertar texto puede usar los siguientes keybindings
+
+  i : insertar texto a la izquierda del cursor
+  a : insertar texto a la derecha del cursor
+  s : insertar texto suprimiendo el caracter en la posicion del cursor
+  o : insertar una linea debajo la linea actual
+
+Tambien puede probar estoy keybindings en version capitalizada
+
+  I : insertar al inicio de la linea
+  A : insertar al final de la linea
+  S : insertar suprimiendo el contenido de la linea
+  O : insertar una linea sobre la linea actual
+
+Para volver al <normal mode> puede usar
+  'ESC'
+  'Ctrl-c'
+
+3.2 ELIMINAR DE TEXTO
+
+Para eliminar texto puede usar los siguientes keybindings
+
+  d : elimina un caracter hacia donde mueva el cursor
+      puede elimnar un caracter o dos linas
+  c : elimina un caracter hacia donde mueva el cursor
+      puede elimnar un caracter o dos linas
+      ademas ingresa en <insert mode>
+
+Puede mover mas de un caracter moviendo el cursor de modo que
+  d}   : elimina hasta el final del parrafo
+  d2w  : elimina dos palabras
+  2diw : elimina dos palabras sin importar el posicionamiento del cursor
+
+  otra forma util de usar 'c' o 'd'
+  ci) : elimina texto entre '()' sin incluirlos ( I nside )
+  ca] : elimina texto entre '[]' incluyendolos  ( A round )
+
+  D : elimina todos los caracteres a la izquierda del cursor
+  C : elimina todos los caracteres a la izquierda del cursor
+      ademas ingresa en <insert mode>
+
+
+3.5 UNDO & REDO /**/
